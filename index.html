@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function_hndson</title>
+</head>
+<body>
+   <h3>Q1.Create one function with zero parameter having a console statement;</h3> 
+   <p>Answer:
+    <pre>
+        function statement() {
+            console.log("function with zero parameter");
+          }
+    
+          statement();
+    </pre>
+   </p><hr>
+   <h3>Q2.</h3>
+   <p>Answer:
+    
+    <pre>
+        function Sum(a, b) {
+            const add = a + b;
+            console.log(`Sum of ${a} and ${b} is ${add}`);
+          }
+          
+          
+        Sum(3, 4);
+        
+    </pre>
+   </p>
+<hr>
+<h3>Q3.Create one arrow function</h3>
+<p>Answer:
+    <pre>
+        const sm =(a,b) => a+b
+        console.log(sm(3,4))
+    </pre>
+</p><hr>
+<h3>Q4.
+    <pre>"Print output: 
+        var x = 21;
+        var girl = function () {
+            console.log(x);
+            var x = 20;
+        };
+        girl ();"</pre>
+</h3>
+<p>Answer: output- undefined<br>
+ reason:The reason is this output is due to the concept of variable hoisting in JavaScript. In JavaScript, when a variable is declared using the var keyword, the declaration is hoisted to the top of the function scope. However, the initialization (assignment) of the variable remains in its original position </p><hr>
+
+ <h3>Q5.<pre>"Print output: 
+    var x = 21;
+    girl ();
+    console.log(x)
+    function girl() {
+        console.log(x);
+        var x = 20;
+    };"</pre>
+    </h3>
+<p>Answer: output- undefined,21<br>
+ reason:The local variable x inside the girl function did not affect the outer x variable because they are in different scopes. </p><hr>
+ 
+<h3>Q6.<pre>"Print output
+
+    var x = 21;
+    a();
+    b();
+    
+      function a() {
+        
+       x = 20;
+      console.log(x);
+    };
+     function b() {
+        
+        x = 40;
+       console.log(x);
+    };</pre></h3>
+
+<p>Answer: output- 20,40<br>
+reason: The reason behind this output is that both functions, a() and b(), are modifying the global variable x, and they do not declare any local variable named x within their respective scopes. Therefore, they access and modify the same global variable x.</p><hr>    
+
+<h3>Q7.</h3>
+<p>Answer:
+    <pre>function factorial(n) {
+        if (n === 0 || n === 1) {
+          return 1; 
+        }
+         else {
+          return n * factorial(n - 1); 
+        }
+      }
+      
+      
+      console.log(factorial(5)); </pre>
+</p><hr>
+<hr>
+<h3>Q8.<pre>Guess the Output
+
+    function FindSum(a, b){
+        return a + b;
+    }
+    
+    function DisplayData(data, batch){
+        console.log(`i am from ${data} and My batch is EA${batch}`)
+    }
+    
+    DisplayData(""PrepBytes"", FindSum(10, 9));</pre>
+    </h3>
+<p>Answer: output- "i am from PrepBytes and My batch is EA19"<br>
+ reason:Here, data is "PrepBytes", and batch is the result of FindSum(10, 9), which is 19. So, it prints the string with the values accordingly. The value 19 is concatenated to the string "EA" to form "EA19" </p><hr>
+ <h3>Q9.<pre>Guess the output
+
+    Abc();
+    const Abc = function(){
+        let value = 20;
+        console.log(value);
+    }</pre>
+    </h3>
+<p>Answer: output-  error.<br>
+ reason: function Abc() is called before it is declared or assigned to the variable Abc. In JavaScript, function declarations are hoisted to the top of their scope, meaning they are moved to the top of the code during the execution phase. However, variable declarations using const or let are not hoisted. The variable Abc is hoisted as undefined, but it's not yet a function at that point. </p><hr>
+  
+ <h3>Q10.<pre>Guess the output
+
+    var a = 10;
+    (function (){
+        console.log(a);
+        var a = 20;
+    })();
+</pre>
+    </h3>
+<p>Answer: output- undefined<br>
+ reason:output is due to variable hoisting in JavaScript. When using the var keyword to declare a variable, the declaration is hoisted to the top of its scope, but the assignment (initialization) remains in its original position.</p><hr>
+ <h3>11.<pre>Guess the Output
+    const greet =  function(name){
+        return function(m){
+        
+            console.log(`Hi!! ${name}, ${m}`);
+        }
+    }
+      
+    const greet_message = greet('EA19');
+    greet_message(""Welcome To PrepBytes"")</pre>
+    </h3>
+<p>Answer: output- Hi!! EA19, Welcome To PrepBytes <br>
+ reason:name is 'EA19', which was captured during the creation of the greet_message function. The inner function (closure) retains access to the name variable from its outer function scope, even after the outer function has finished executing. This is the essence of closures in JavaScript. </p><hr>
+</body>
+</html>
